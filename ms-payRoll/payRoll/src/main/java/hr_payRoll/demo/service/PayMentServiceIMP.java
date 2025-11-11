@@ -2,6 +2,7 @@ package hr_payRoll.demo.service;
 
 import hr_payRoll.demo.entites.Payment;
 import hr_payRoll.demo.entites.Worker;
+import hr_payRoll.demo.feigenClients.PaymentFeingclients;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -24,14 +25,13 @@ public class PayMentServiceIMP implements PaymentService {
     @Autowired
     private RestTemplate restTemplate;
 
-    public Payment creatPayment(Long idWorker, Integer dayOdPayment){
-        Map<String, String> uriVarieble = new HashMap<>();
-        uriVarieble.put("id", ""+idWorker);
-        Worker worker = restTemplate.getForObject(host + "Worker/{id}", Worker.class, uriVarieble);
-        Payment payment = new Payment();
-        payment.setWorkId(worker.getId());
-        payment.setDaiLyIncome(worker.getDaiLyIncome());
-        payment.setDaysOfPayment(dayOdPayment);
-        return payment;
+    @Autowired
+    private PaymentFeingclients paymentFeingclients;
+
+    @Override
+    public Payment creatPayment(Long idWorker, Integer dayOdPayment) {
+        Worker worker = paymentFeingclients.findById(idWorker).getBody();
+        return new Payment(worker.getName(), worker.getDaiLyIncome(), dayOdPayment);
     }
+
 }

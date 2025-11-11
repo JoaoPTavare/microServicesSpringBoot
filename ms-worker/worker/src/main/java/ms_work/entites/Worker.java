@@ -18,18 +18,16 @@ public class Worker implements Serializable{
     @Column(name="daily_income")
     Double daiLyIncome;
 
-    @OneToOne
-    private Endereco endereco;
 
 
     public Worker() {
     }
 
-    public Worker(long id, String name, Double daiLyIncome, Endereco endereco) {
+    public Worker(long id, String name, Double daiLyIncome) {
         this.id = id;
         this.name = name;
         this.daiLyIncome = daiLyIncome;
-        this.endereco = endereco;
+
     }
 
 
@@ -57,13 +55,6 @@ public class Worker implements Serializable{
         this.daiLyIncome = daiLyIncome;
     }
 
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
 
     @Override
     public boolean equals(Object o) {

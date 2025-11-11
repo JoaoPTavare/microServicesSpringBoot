@@ -25,7 +25,7 @@ public class Payment {
     @Column
     private Double valueOfPayment;
 
-    public Payment() {
+    public Payment(String name, Double daiLyIncome, Integer dayOdPayment) {
     }
 
     public Payment(Long id, Long workId, Integer daysOfPayment, Double valueOfPayment, Double daiLyIncome) {

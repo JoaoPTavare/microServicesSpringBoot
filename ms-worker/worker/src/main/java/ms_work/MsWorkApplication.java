@@ -1,6 +1,6 @@
 package ms_work;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -12,10 +12,10 @@ public class MsWorkApplication {
 		SpringApplication.run(MsWorkApplication.class, args);
 	}
 
-	@Bean
-	public ObjectMapper obejectMapper(){
-		return new ObjectMapper();
-	}
+//	@Bean
+//	public ObjectMapper obejectMapper(){
+//		return new ObjectMapper();
+//	}
 
 
 }
