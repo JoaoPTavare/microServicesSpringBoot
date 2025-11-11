@@ -4,5 +4,5 @@ import ms_work.entites.Worker;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-public interface  WorkRepository extends JpaRepository<Worker, Long> {
+public interface WorkerRepository extends JpaRepository<Worker, Long> {
 }
