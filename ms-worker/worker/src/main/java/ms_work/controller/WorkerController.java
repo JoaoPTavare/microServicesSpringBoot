@@ -1,11 +1,8 @@
 package ms_work.controller;
 
 import ms_work.entites.Worker;
-import ms_work.respository.WorkRepository;
+import ms_work.respository.WorkerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.cache.CacheType;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +16,7 @@ import java.util.Optional;
 public class WorkerController {
 
     @Autowired
-    private WorkRepository workRepository;
+    private WorkerRepository workRepository;
 
     //Get
 
