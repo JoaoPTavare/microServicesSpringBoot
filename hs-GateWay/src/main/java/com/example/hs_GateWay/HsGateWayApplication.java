@@ -1,24 +1,16 @@
-package ms_work;
-
+package com.example.hs_GateWay;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.context.annotation.Bean;
 
 
 @EnableEurekaClient
 @SpringBootApplication
-public class MsWorkApplication {
+public class HsGateWayApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MsWorkApplication.class, args);
+		SpringApplication.run(HsGateWayApplication.class, args);
 	}
-
-//	@Bean
-//	public ObjectMapper obejectMapper(){
-//		return new ObjectMapper();
-//	}
-
 
 }

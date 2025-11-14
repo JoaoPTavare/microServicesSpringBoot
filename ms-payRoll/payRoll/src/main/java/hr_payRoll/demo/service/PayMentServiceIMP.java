@@ -34,4 +34,12 @@ public class PayMentServiceIMP implements PaymentService {
         return new Payment(worker.getName(), worker.getDaiLyIncome(), dayOdPayment);
     }
 
+
+    // Sera criado uma difereça entre a criação e a busa, sera criados atribustos que controle a data a qual é realizado o pagamento
+    public Payment getPayment(long workerId, int days) {
+
+        Worker worker = paymentFeingclients.findById(workerId).getBody();
+        return new Payment(worker.getName(), worker.getDaiLyIncome(), days);
+    }
+
 }
